@@ -2,12 +2,12 @@
 
 ![](./resources/gb-boxart.png)
 
-Felix Green is a RPG game for the Game Boy created in GB Studio.
+Felix Green is a homebrew RPG for the Game Boy created in GB Studio.
 
 ## Premise
 
-Felix Green is a story about the titular character. He becomes cyborg after losing his arm and eye in a car accident. But just as he is beginning to settle down, the military knocks on his door and explain that they're interested in using him to gain the upper hand in future warfare. But Felix is still recovering from the trauma, yet he knows can be of value.
+Felix Green is a story about the titular character that becomes cyborg after losing his arm and eye in a car accident whom is soon approached​ by the military as they seem as a valuable asset.
 
 ## License
 
-I license this project under the GPL-v3.0 - see [LICENSE](LICENSE) for details.
+I license this project under the Artistic-2.0 - see [LICENSE](LICENSE) for details.
