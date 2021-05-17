@@ -2,15 +2,15 @@
     "settings": {
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 325,
-        "worldScrollY": 67,
-        "zoom": 142.7663514688611,
+        "worldScrollX": 1398,
+        "worldScrollY": 233,
+        "zoom": 337.2855436652899,
         "customColorsWhite": "E8F8E0",
         "customColorsLight": "B0F088",
         "customColorsDark": "509878",
         "customColorsBlack": "202850",
         "startMapId": "cb5e225f-e996-4ca8-b068-09a12ec18b75",
-        "startX": 1,
+        "startX": 2,
         "startY": 0,
         "startDirection": "right",
         "startSceneId": "382961a1-e615-4b92-92a7-f1a791b50b7a",
@@ -101,7 +101,8 @@
                     "args": {
                         "color": "black",
                         "x": 0,
-                        "y": 0
+                        "y": 0,
+                        "__collapse": true
                     }
                 },
                 {
@@ -110,14 +111,16 @@
                     "args": {
                         "x": 0,
                         "y": 18,
-                        "speed": "2"
+                        "speed": "2",
+                        "__collapse": true
                     }
                 },
                 {
                     "id": "0677a82b-f7cf-429e-9259-dba979146cc5",
                     "command": "EVENT_WAIT",
                     "args": {
-                        "time": 2
+                        "time": 2,
+                        "__collapse": true
                     }
                 },
                 {
@@ -128,7 +131,8 @@
                         "x": 0,
                         "y": 0,
                         "direction": "",
-                        "fadeSpeed": "2"
+                        "fadeSpeed": "2",
+                        "__collapse": true
                     }
                 },
                 {
@@ -142,7 +146,7 @@
             "name": "Title Screen",
             "backgroundId": "f047ff0e-58ad-49fc-bd2b-ec84fc1f7ab3",
             "x": 262.68391002797375,
-            "y": 332.27560554211163,
+            "y": 333.11964388548,
             "width": 20,
             "height": 18,
             "actors": [],
@@ -368,23 +372,94 @@
                 {
                     "spriteSheetId": "f955da60-3d6f-44da-af86-3011c72b9366",
                     "movementType": "faceInteraction",
-                    "direction": "left",
+                    "direction": "down",
                     "moveSpeed": "1",
                     "animSpeed": "3",
                     "id": "e2392921-a206-4d4c-b9a5-ca8de6edd669",
-                    "x": 13,
-                    "y": 8,
+                    "x": 7,
+                    "y": 6,
                     "script": [
                         {
-                            "id": "53459a49-33d5-42f0-98e5-aad10f8e1987",
-                            "command": "EVENT_TEXT",
+                            "id": "dce73d72-77af-4f2c-871b-ab248a3494e7",
+                            "command": "EVENT_IF_FALSE",
                             "args": {
-                                "text": [
-                                    "We want you to\nwork for the\nmilitary.",
-                                    "Your cybernatic\neye and arm could\nreally help us.",
-                                    "You can take\nsometime to think."
+                                "variable": "0",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "id": "53459a49-33d5-42f0-98e5-aad10f8e1987",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "We want you to\njoin the\nmilitary.",
+                                                "Your cybernatic\nenhancements could\nreally help us.",
+                                                "We will give you\ntime to decide."
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": false
+                                        }
+                                    },
+                                    {
+                                        "id": "13e77a43-7607-4195-a784-a87625af3bce",
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "0"
+                                        }
+                                    },
+                                    {
+                                        "id": "aa513c79-5504-4db6-b95e-6dc9ffa934c0",
+                                        "command": "EVENT_END"
+                                    }
                                 ],
-                                "avatarId": ""
+                                "false": [
+                                    {
+                                        "id": "148aaa15-3e9e-4787-b6a9-3683b79b4312",
+                                        "command": "EVENT_IF_TRUE",
+                                        "args": {
+                                            "variable": "1",
+                                            "__collapseElse": false
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "id": "968dd388-a965-4b0f-af2c-28b7999924d6",
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "Thank you."
+                                                        ],
+                                                        "avatarId": ""
+                                                    }
+                                                },
+                                                {
+                                                    "id": "b3b14c8b-058b-4909-a1dd-d6a0ed3d7747",
+                                                    "command": "EVENT_END"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "id": "624c8195-d700-49e3-9051-9fffc5681e88",
+                                                    "command": "EVENT_CHOICE",
+                                                    "args": {
+                                                        "variable": "1",
+                                                        "trueText": "Accept Offer",
+                                                        "falseText": "Need More Time"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "630d5d30-5e12-463a-9412-0c58de8e61c2",
+                                                    "command": "EVENT_END"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "9ad7bc90-fb4d-43eb-87e8-f7ebb4e74bb3",
+                                        "command": "EVENT_END"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -400,23 +475,55 @@
                     ]
                 },
                 {
-                    "spriteSheetId": "76041492-a61f-48c8-adcc-fee518250d76",
+                    "spriteSheetId": "0e45f3ed-a6d7-4beb-9fd2-cda014c8cc72",
                     "movementType": "faceInteraction",
-                    "direction": "left",
+                    "direction": "down",
                     "moveSpeed": "1",
                     "animSpeed": "3",
                     "id": "2e1eb639-6bc1-432c-98c4-546594e3a048",
-                    "x": 13,
-                    "y": 10,
+                    "x": 10,
+                    "y": 6,
                     "script": [
                         {
-                            "id": "255e63ba-02de-4c26-b0be-56810c452f58",
-                            "command": "EVENT_TEXT",
+                            "id": "a157dfe0-40f7-4c8b-95a4-3ea466afbc8a",
+                            "command": "EVENT_IF_TRUE",
                             "args": {
-                                "text": [
-                                    ""
+                                "variable": "0",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "id": "5a7350f5-a6b5-4023-8776-ae082027b765",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "It would mean a\nlot to us if you\njoined."
+                                            ],
+                                            "avatarId": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "f044d22c-b179-48d2-956c-083e4dda7d0b",
+                                        "command": "EVENT_END"
+                                    }
                                 ],
-                                "avatarId": ""
+                                "false": [
+                                    {
+                                        "id": "2db2109d-3b0f-43ad-b2f8-01be6b9be086",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "The general wants\nto speak with you."
+                                            ],
+                                            "avatarId": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "d3d9be42-6616-4a08-874c-4a3276dbf17e",
+                                        "command": "EVENT_END"
+                                    }
+                                ]
                             }
                         },
                         {
@@ -675,11 +782,11 @@
     "variables": [
         {
             "id": "0",
-            "name": "Seen Cat"
+            "name": "First Meet"
         },
         {
             "id": "1",
-            "name": "Seen duck"
+            "name": "Acceted Offer"
         },
         {
             "id": "2",
@@ -724,6 +831,10 @@
         {
             "id": "12",
             "name": "PushedIceBlock"
+        },
+        {
+            "id": "e2392921-a206-4d4c-b9a5-ca8de6edd669__L0",
+            "name": "Local 0"
         }
     ],
     "backgrounds": [
@@ -735,7 +846,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "cave.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "22b84061-05b6-4546-95db-5c6e26e47d68",
@@ -745,7 +856,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "city.png",
-            "_v": 1621044238673
+            "_v": 1621215656699
         },
         {
             "id": "b340b9a2-2865-4e05-91c0-148846a693c8",
@@ -755,7 +866,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "house.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "19d8e9a1-36f7-4cde-815e-41b33ebff93b",
@@ -765,7 +876,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "lab.png",
-            "_v": 1621035490834
+            "_v": 1621215656699
         },
         {
             "id": "f8b1c7ad-7bb2-44b2-8189-175ae8698f11",
@@ -775,7 +886,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "logo.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "b49ea566-b022-478c-979d-ec3ee255fdc5",
@@ -785,7 +896,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "menu.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "1b7fa267-d716-40f0-b0d0-f4f966610e07",
@@ -795,7 +906,7 @@
             "imageWidth": 256,
             "imageHeight": 256,
             "filename": "outside.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "40fda058-df90-4205-a239-fe77bce4fa79",
@@ -805,7 +916,7 @@
             "imageWidth": 256,
             "imageHeight": 256,
             "filename": "stars.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "f047ff0e-58ad-49fc-bd2b-ec84fc1f7ab3",
@@ -815,7 +926,7 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "titlescreen.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "f3102db4-2273-411d-b33f-4d6f65959c60",
@@ -825,7 +936,7 @@
             "imageWidth": 256,
             "imageHeight": 256,
             "filename": "underground.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         }
     ],
     "spriteSheets": [
@@ -835,7 +946,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "cat.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "f0c3033d-e82a-407d-9fe2-3d5da4f59c09",
@@ -843,7 +954,7 @@
             "numFrames": 3,
             "type": "actor",
             "filename": "checkbox.png",
-            "_v": 1621034595384
+            "_v": 1621215656700
         },
         {
             "id": "17219846-cda9-4e84-bdfa-c3ff105d42cc",
@@ -851,7 +962,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "dog.png",
-            "_v": 1621034595384
+            "_v": 1621215656699
         },
         {
             "id": "ede130e6-013a-42d1-a786-1aed3fd3cf32",
@@ -859,7 +970,7 @@
             "numFrames": 2,
             "type": "animated",
             "filename": "duck.png",
-            "_v": 1621034595384
+            "_v": 1621215656700
         },
         {
             "id": "f2610e3c-8ff9-42fa-a9bb-d1591031fa17",
@@ -867,7 +978,7 @@
             "numFrames": 4,
             "type": "animated",
             "filename": "fire.png",
-            "_v": 1621034595384
+            "_v": 1621215656700
         },
         {
             "id": "09ad70c6-3ce5-4b97-9e96-466221418a45",
@@ -875,7 +986,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "ice.png",
-            "_v": 1621034595384
+            "_v": 1621215656700
         },
         {
             "id": "dfa75239-299d-41fe-a6cd-9e9438da1938",
@@ -883,7 +994,7 @@
             "numFrames": 3,
             "type": "actor",
             "filename": "npc001.png",
-            "_v": 1621034595384
+            "_v": 1621215656700
         },
         {
             "id": "40dcd163-9f72-4861-8131-b01eb9baa000",
@@ -891,7 +1002,7 @@
             "numFrames": 3,
             "type": "actor",
             "filename": "npc002.png",
-            "_v": 1621034595384
+            "_v": 1621215656700
         },
         {
             "id": "52ad34df-f245-4b2a-b94c-a82af1002871",
@@ -899,7 +1010,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "npc003.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "ac1e8ef4-ffe6-47cd-b16f-9af5da77ec26",
@@ -907,7 +1018,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "player.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "a0442b6a-634f-44da-9962-77938e3ed839",
@@ -915,7 +1026,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "radio.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "3939e8d2-3987-4a22-953e-f1d82134eccf",
@@ -923,7 +1034,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "rock.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "e20ce140-53a5-4b1b-9964-138ba0c86925",
@@ -931,7 +1042,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "sage.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "000a6dde-cb60-436e-b357-30a529daa139",
@@ -939,7 +1050,7 @@
             "numFrames": 2,
             "type": "animated",
             "filename": "savepoint.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
@@ -947,7 +1058,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "signpost.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "e9e61bf7-88fd-491d-ae01-4b7f76909108",
@@ -955,7 +1066,7 @@
             "numFrames": 1,
             "type": "static",
             "filename": "torch.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "76041492-a61f-48c8-adcc-fee518250d76",
@@ -963,7 +1074,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Bunny.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "f955da60-3d6f-44da-af86-3011c72b9366",
@@ -971,7 +1082,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Cat.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "d5ac7df7-bea3-4985-8090-56c3b5aa4e3f",
@@ -979,7 +1090,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Deer.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "91ad0163-0ce2-4df4-b3e5-1d195a9b375c",
@@ -987,7 +1098,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Elephant.png",
-            "_v": 1621034595385
+            "_v": 1621215656700
         },
         {
             "id": "fd27c7c9-14ae-4ca0-bf4e-4239ed505808",
@@ -995,7 +1106,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Fox.png",
-            "_v": 1621034595385
+            "_v": 1621215656701
         },
         {
             "id": "61bcec26-a836-440a-bd3b-f8dd66b53128",
@@ -1003,7 +1114,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Frog.png",
-            "_v": 1621034595385
+            "_v": 1621215656701
         },
         {
             "id": "0e45f3ed-a6d7-4beb-9fd2-cda014c8cc72",
@@ -1011,7 +1122,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Girl Dog.png",
-            "_v": 1621034595385
+            "_v": 1621215656701
         },
         {
             "id": "5c8c7af7-2cd1-4291-bc9d-2b3546c49d0a",
@@ -1019,7 +1130,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Ram.png",
-            "_v": 1621034595385
+            "_v": 1621215656701
         },
         {
             "id": "c4359370-6f78-416c-819c-c250be0ba940",
@@ -1027,7 +1138,7 @@
             "numFrames": 6,
             "type": "actor_animated",
             "filename": "Villager - Squirrel.png",
-            "_v": 1621034595391
+            "_v": 1621215656702
         }
     ],
     "music": [
@@ -1035,8 +1146,14 @@
             "id": "f50428ab-a084-4591-9bba-2ba10fe7b1c6",
             "name": "template",
             "filename": "template.mod",
-            "_v": 1621034595380
+            "_v": 1621215656695
         }
     ],
-    "customEvents": []
+    "customEvents": [
+        {
+            "id": "ad55e419-abc8-4d62-8509-4556c6186922",
+            "variables": {},
+            "actors": {}
+        }
+    ]
 }
