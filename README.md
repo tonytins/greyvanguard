@@ -1,4 +1,4 @@
-# Felix Green
+# Felix Green: Operation Grey Vanguard
 
 ![](./resources/gb-boxart.png)
 

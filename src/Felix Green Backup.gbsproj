@@ -1,0 +1,1848 @@
+{
+    "settings": {
+        "showCollisions": true,
+        "showConnections": true,
+        "worldScrollX": 1958,
+        "worldScrollY": 2036,
+        "zoom": 273.7464148774743,
+        "customColorsWhite": "E8F8E0",
+        "customColorsLight": "B0F088",
+        "customColorsDark": "509878",
+        "customColorsBlack": "202850",
+        "startMapId": "cb5e225f-e996-4ca8-b068-09a12ec18b75",
+        "startX": 2,
+        "startY": 0,
+        "startDirection": "right",
+        "startSceneId": "382961a1-e615-4b92-92a7-f1a791b50b7a",
+        "playerSpriteSheetId": "fd27c7c9-14ae-4ca0-bf4e-4239ed505808",
+        "customControlsA": [
+            "Alt",
+            "z",
+            "j",
+            "q"
+        ],
+        "customControlsB": [
+            "Control",
+            "k",
+            "x",
+            "e"
+        ],
+        "gbcFastCPUEnabled": true
+    },
+    "scenes": [
+        {
+            "id": "382961a1-e615-4b92-92a7-f1a791b50b7a",
+            "name": "Logo",
+            "backgroundId": "f8b1c7ad-7bb2-44b2-8189-175ae8698f11",
+            "x": 1254.4001928311932,
+            "y": 766.6821007653192,
+            "width": 20,
+            "height": 18,
+            "actors": [],
+            "triggers": [],
+            "collisions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "script": [
+                {
+                    "id": "8343c54c-07a1-4d30-892c-91db234b8d9b",
+                    "command": "EVENT_ACTOR_HIDE",
+                    "args": {
+                        "actorId": "player"
+                    }
+                },
+                {
+                    "id": "dfb4c321-31ae-4e7f-a400-aae4088043d5",
+                    "command": "EVENT_OVERLAY_SHOW",
+                    "args": {
+                        "color": "black",
+                        "x": 0,
+                        "y": 0,
+                        "__collapse": true
+                    }
+                },
+                {
+                    "id": "e88fcc15-89a0-4db6-b069-aeffe9cb222b",
+                    "command": "EVENT_OVERLAY_MOVE_TO",
+                    "args": {
+                        "x": 0,
+                        "y": 18,
+                        "speed": "2",
+                        "__collapse": true
+                    }
+                },
+                {
+                    "id": "0677a82b-f7cf-429e-9259-dba979146cc5",
+                    "command": "EVENT_WAIT",
+                    "args": {
+                        "time": 2,
+                        "__collapse": true
+                    }
+                },
+                {
+                    "id": "9daba1e6-c056-494a-babc-caa87913aa32",
+                    "command": "EVENT_SWITCH_SCENE",
+                    "args": {
+                        "sceneId": "4912bee2-387a-472f-ae4f-6679b6149517",
+                        "x": 0,
+                        "y": 0,
+                        "direction": "",
+                        "fadeSpeed": "2",
+                        "__collapse": true
+                    }
+                },
+                {
+                    "id": "262b6a60-ae31-496d-9b82-a0765f1f7965",
+                    "command": "EVENT_END"
+                }
+            ]
+        },
+        {
+            "id": "4912bee2-387a-472f-ae4f-6679b6149517",
+            "name": "Title Screen",
+            "backgroundId": "f047ff0e-58ad-49fc-bd2b-ec84fc1f7ab3",
+            "x": 1054.267997078108,
+            "y": 772.3830560686026,
+            "width": 20,
+            "height": 18,
+            "actors": [],
+            "triggers": [],
+            "collisions": [],
+            "script": [
+                {
+                    "id": "ff79b819-b435-4ef8-af20-07302038959f",
+                    "command": "EVENT_ACTOR_HIDE",
+                    "args": {
+                        "actorId": "player"
+                    }
+                },
+                {
+                    "id": "41b284dc-047f-4bb1-ad5c-f8ade30d034e",
+                    "command": "EVENT_AWAIT_INPUT",
+                    "args": {
+                        "input": [
+                            "a",
+                            "b",
+                            "start",
+                            "select"
+                        ]
+                    }
+                },
+                {
+                    "id": "19a94599-0006-4e3f-9049-c5087d230ed8",
+                    "command": "EVENT_LOOP",
+                    "args": {},
+                    "children": {
+                        "true": [
+                            {
+                                "id": "44762258-56af-44bd-abea-f0b9358bc514",
+                                "command": "EVENT_CHOICE",
+                                "args": {
+                                    "variable": "10",
+                                    "trueText": "New Game",
+                                    "falseText": "Continue"
+                                }
+                            },
+                            {
+                                "id": "9e757f17-62ae-4fb5-990f-a9d337d7f07d",
+                                "command": "EVENT_IF_TRUE",
+                                "args": {
+                                    "variable": "10",
+                                    "__collapse": false,
+                                    "__collapseElse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "id": "a5dddc76-e5fe-424a-9b2b-1ad1834acefb",
+                                            "command": "EVENT_SWITCH_SCENE",
+                                            "args": {
+                                                "sceneId": "df39eab3-b71f-4b3f-a733-6b9b20de2ea6",
+                                                "x": 16,
+                                                "y": 24,
+                                                "direction": "right",
+                                                "fadeSpeed": "4"
+                                            }
+                                        },
+                                        {
+                                            "id": "90fc1fc6-b24c-482d-b56c-ef11f1f80a64",
+                                            "command": "EVENT_END"
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "id": "d2cd5812-f043-4aa5-b827-475dc79091e7",
+                                            "command": "EVENT_IF_SAVED_DATA",
+                                            "args": {},
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "id": "4a922761-48a9-410d-b603-00e7a7dd91ea",
+                                                        "command": "EVENT_LOAD_DATA",
+                                                        "args": {}
+                                                    },
+                                                    {
+                                                        "id": "f5866539-6ba8-4962-ae6e-0814d54fb4f9",
+                                                        "command": "EVENT_END"
+                                                    }
+                                                ],
+                                                "false": [
+                                                    {
+                                                        "id": "06b8f464-996e-4c51-8918-50d62bb0c02d",
+                                                        "command": "EVENT_TEXT",
+                                                        "args": {
+                                                            "text": "No Save Data\nFound..."
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "a830176d-10b5-4ff2-b276-4a0e15a39ae9",
+                                                        "command": "EVENT_END"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": "c920bf80-2dde-4ae2-b3f2-52b225124458",
+                                            "command": "EVENT_END"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "bf72540e-d33a-41fd-9538-b51dc0f70623",
+                                "command": "EVENT_END"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "ac580f52-6b2a-4c4a-8de1-5bfa4bf93599",
+                    "command": "EVENT_IF_INPUT",
+                    "args": {
+                        "input": [
+                            "start"
+                        ],
+                        "__collapseElse": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "id": "75b2bcf8-e971-4f9e-aaea-3cb049d2c484",
+                                "command": "EVENT_END"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "id": "f9c7b1c7-0ab7-44cd-95e2-c8882bc376a3",
+                                "command": "EVENT_END"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "262b6a60-ae31-496d-9b82-a0765f1f7965",
+                    "command": "EVENT_END"
+                }
+            ]
+        },
+        {
+            "name": "Central Tower",
+            "backgroundId": "19d8e9a1-36f7-4cde-815e-41b33ebff93b",
+            "width": 20,
+            "height": 18,
+            "collisions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                240,
+                255,
+                255,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                248,
+                255,
+                255
+            ],
+            "id": "4e71d6e9-6eb7-4310-a380-369344d3debf",
+            "x": 856.2087628074761,
+            "y": 775.0361083246266,
+            "actors": [
+                {
+                    "spriteSheetId": "f955da60-3d6f-44da-af86-3011c72b9366",
+                    "movementType": "faceInteraction",
+                    "direction": "down",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "e2392921-a206-4d4c-b9a5-ca8de6edd669",
+                    "x": 7,
+                    "y": 6,
+                    "script": [
+                        {
+                            "id": "dce73d72-77af-4f2c-871b-ab248a3494e7",
+                            "command": "EVENT_IF_FALSE",
+                            "args": {
+                                "variable": "0",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "id": "53459a49-33d5-42f0-98e5-aad10f8e1987",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "We want you to\njoin the\nmilitary.",
+                                                "Your cybernatic\nenhancements could\nreally help us.",
+                                                "We will give you\ntime to decide."
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": false
+                                        }
+                                    },
+                                    {
+                                        "id": "13e77a43-7607-4195-a784-a87625af3bce",
+                                        "command": "EVENT_SET_TRUE",
+                                        "args": {
+                                            "variable": "0"
+                                        }
+                                    },
+                                    {
+                                        "id": "aa513c79-5504-4db6-b95e-6dc9ffa934c0",
+                                        "command": "EVENT_END"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "id": "ac0617d0-a683-450d-9c4e-9188c67a997a",
+                                        "command": "EVENT_COMMENT",
+                                        "args": {
+                                            "text": "Once the offer is accepted, the player can't return to Furtroplis for a long time."
+                                        }
+                                    },
+                                    {
+                                        "id": "624c8195-d700-49e3-9051-9fffc5681e88",
+                                        "command": "EVENT_CHOICE",
+                                        "args": {
+                                            "variable": "1",
+                                            "trueText": "Accept Offer",
+                                            "falseText": "Need More Time"
+                                        }
+                                    },
+                                    {
+                                        "id": "3cd01d25-d8b4-4343-b5bd-268b18b7b6b8",
+                                        "command": "EVENT_IF_TRUE",
+                                        "args": {
+                                            "variable": "1",
+                                            "__collapseElse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "id": "9f11b173-eb67-4169-b542-2cb318fb5028",
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "Thank you."
+                                                        ],
+                                                        "avatarId": ""
+                                                    },
+                                                    "__type": "event"
+                                                },
+                                                {
+                                                    "id": "d11c3caa-5d1c-4a8f-8ce1-00324e95c9bd",
+                                                    "command": "EVENT_SWITCH_SCENE",
+                                                    "args": {
+                                                        "sceneId": "833cbaee-62f5-4afb-8d5f-fdf30d7ee3d2",
+                                                        "x": 15,
+                                                        "y": 10,
+                                                        "direction": "left",
+                                                        "fadeSpeed": "2"
+                                                    }
+                                                },
+                                                {
+                                                    "id": "3ca27d69-6411-4a64-8d3e-b22e31e40b15",
+                                                    "command": "EVENT_END"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "id": "2fc9d20c-c96d-45d9-b066-649ae23d207f",
+                                                    "command": "EVENT_END"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "id": "9ad7bc90-fb4d-43eb-87e8-f7ebb4e74bb3",
+                                        "command": "EVENT_END"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7930da1a-6a00-462a-9cec-11481d170a2b",
+                            "command": "EVENT_END"
+                        }
+                    ],
+                    "startScript": [
+                        {
+                            "id": "39b859eb-3add-4b80-8743-03388a4fca00",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
+                    "spriteSheetId": "0e45f3ed-a6d7-4beb-9fd2-cda014c8cc72",
+                    "movementType": "faceInteraction",
+                    "direction": "down",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "2e1eb639-6bc1-432c-98c4-546594e3a048",
+                    "x": 10,
+                    "y": 6,
+                    "script": [
+                        {
+                            "id": "a157dfe0-40f7-4c8b-95a4-3ea466afbc8a",
+                            "command": "EVENT_IF_TRUE",
+                            "args": {
+                                "variable": "0",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "id": "5a7350f5-a6b5-4023-8776-ae082027b765",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "It would mean a\nlot to us if you\njoined."
+                                            ],
+                                            "avatarId": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "f044d22c-b179-48d2-956c-083e4dda7d0b",
+                                        "command": "EVENT_END"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "id": "2db2109d-3b0f-43ad-b2f8-01be6b9be086",
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "The general wants\nto speak with you."
+                                            ],
+                                            "avatarId": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "d3d9be42-6616-4a08-874c-4a3276dbf17e",
+                                        "command": "EVENT_END"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6740b50a-5985-4f30-9366-de03e5c8f301",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ],
+            "triggers": [
+                {
+                    "x": 7,
+                    "y": 16,
+                    "width": 3,
+                    "height": 1,
+                    "trigger": "walk",
+                    "script": [
+                        {
+                            "id": "f985ad64-ad48-4792-817b-2d57ae6956ff",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "df39eab3-b71f-4b3f-a733-6b9b20de2ea6",
+                                "x": 16,
+                                "y": 22,
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "f49f1e60-9513-4486-9d3b-6f86d1baa938",
+                            "command": "EVENT_END"
+                        }
+                    ],
+                    "id": "d8200245-5aa1-4e8b-aa30-1a13bd2a9e1a"
+                }
+            ]
+        },
+        {
+            "name": "Museum",
+            "backgroundId": "b340b9a2-2865-4e05-91c0-148846a693c8",
+            "width": 20,
+            "height": 18,
+            "collisions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                224,
+                255,
+                127,
+                2,
+                0,
+                36,
+                0,
+                64,
+                2,
+                0,
+                36,
+                0,
+                64,
+                2,
+                0,
+                36,
+                0,
+                64,
+                2,
+                0,
+                36,
+                0,
+                64,
+                2,
+                0,
+                36,
+                0,
+                64,
+                2,
+                0,
+                228,
+                159,
+                127,
+                0,
+                15,
+                0,
+                0,
+                0
+            ],
+            "id": "b5b33a87-776e-423a-8c9b-d0cc647c2018",
+            "x": 1453.9737101862145,
+            "y": 772.8707940271848,
+            "actors": [
+                {
+                    "spriteSheetId": "f955da60-3d6f-44da-af86-3011c72b9366",
+                    "movementType": "faceInteraction",
+                    "direction": "left",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "5ad8674c-7af2-497b-a3fd-2dcd034986a0",
+                    "x": 14,
+                    "y": 12,
+                    "script": [
+                        {
+                            "id": "83dd7cec-e698-49fe-8c85-cebfae0ef314",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Welcome! My name\nis Veronica,",
+                                    "and this is the\nFurtropolis\nmuseum."
+                                ],
+                                "avatarId": ""
+                            }
+                        },
+                        {
+                            "id": "85d4e669-30d0-48f9-ac43-cf9ce9c9d4ff",
+                            "command": "EVENT_END"
+                        }
+                    ],
+                    "name": "Veronica"
+                },
+                {
+                    "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
+                    "movementType": "static",
+                    "direction": "down",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "62721258-79cf-46a2-ac88-9167fd362677",
+                    "x": 4,
+                    "y": 11,
+                    "name": "Founding",
+                    "script": [
+                        {
+                            "id": "7db2d894-f2a6-4496-bffb-03e4e3ff7487",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Furtroplis,\ncapital\nof Nethington.",
+                                    "After the country\nopened it's doors\nto the world,",
+                                    "Furtropolis was\nfounded as a hub\nfor trade,",
+                                    "tourism and\nculture."
+                                ],
+                                "avatarId": ""
+                            }
+                        },
+                        {
+                            "id": "5b4db43a-8d07-4259-8b1d-20778eb4652a",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ],
+            "triggers": [
+                {
+                    "trigger": "walk",
+                    "id": "c9633d9a-fe92-49d2-b796-1863bb524896",
+                    "x": 9,
+                    "y": 15,
+                    "width": 2,
+                    "height": 1,
+                    "script": [
+                        {
+                            "id": "8c597908-5ca1-43b0-b5b7-848588e55e4b",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "df39eab3-b71f-4b3f-a733-6b9b20de2ea6",
+                                "x": 26,
+                                "y": 14,
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "d6be1d04-cec7-4862-a04b-7cd8b0fae2f6",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Secret Place",
+            "backgroundId": "19d8e9a1-36f7-4cde-815e-41b33ebff93b",
+            "width": 20,
+            "height": 18,
+            "collisions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                240,
+                255,
+                255,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                24,
+                0,
+                128,
+                1,
+                0,
+                248,
+                255,
+                255
+            ],
+            "id": "833cbaee-62f5-4afb-8d5f-fdf30d7ee3d2",
+            "x": 678.4646762770809,
+            "y": 777.273333907733,
+            "actors": [
+                {
+                    "spriteSheetId": "f955da60-3d6f-44da-af86-3011c72b9366",
+                    "movementType": "faceInteraction",
+                    "direction": "right",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "db3969d7-505a-491d-bf76-4f0faf2bde6e",
+                    "x": 11,
+                    "y": 10
+                }
+            ],
+            "triggers": []
+        },
+        {
+            "name": "Furtropolis",
+            "backgroundId": "422fee11-9b1e-4ee0-8626-5e85baa2c58b",
+            "width": 32,
+            "height": 32,
+            "collisions": [
+                0,
+                0,
+                18,
+                0,
+                0,
+                0,
+                18,
+                0,
+                0,
+                0,
+                18,
+                0,
+                0,
+                0,
+                18,
+                0,
+                0,
+                0,
+                18,
+                0,
+                255,
+                255,
+                243,
+                255,
+                0,
+                0,
+                0,
+                63,
+                0,
+                0,
+                0,
+                33,
+                240,
+                195,
+                15,
+                33,
+                16,
+                66,
+                8,
+                33,
+                16,
+                66,
+                8,
+                33,
+                16,
+                66,
+                8,
+                33,
+                16,
+                66,
+                8,
+                45,
+                240,
+                195,
+                15,
+                51,
+                0,
+                64,
+                8,
+                0,
+                0,
+                64,
+                8,
+                63,
+                240,
+                115,
+                56,
+                33,
+                16,
+                114,
+                56,
+                33,
+                16,
+                114,
+                56,
+                33,
+                16,
+                114,
+                56,
+                33,
+                16,
+                114,
+                59,
+                63,
+                16,
+                242,
+                60,
+                0,
+                16,
+                2,
+                0,
+                0,
+                240,
+                3,
+                0,
+                63,
+                0,
+                0,
+                0,
+                33,
+                0,
+                192,
+                15,
+                33,
+                240,
+                67,
+                8,
+                33,
+                16,
+                66,
+                8,
+                33,
+                16,
+                66,
+                8,
+                33,
+                16,
+                66,
+                8,
+                33,
+                16,
+                194,
+                15,
+                63,
+                16,
+                2,
+                0,
+                0
+            ],
+            "id": "df39eab3-b71f-4b3f-a733-6b9b20de2ea6",
+            "x": 844.2031336556826,
+            "y": 1018.2012552366941,
+            "actors": [
+                {
+                    "spriteSheetId": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
+                    "movementType": "static",
+                    "direction": "down",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "a436e4b7-e8bf-488b-ba0a-658122644de6",
+                    "x": 18,
+                    "y": 22,
+                    "script": [
+                        {
+                            "id": "2baceae9-e8f0-4c06-9cfd-9d484069435c",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Central Tower\n"
+                                ],
+                                "avatarId": ""
+                            }
+                        },
+                        {
+                            "id": "a52434d3-6b2a-4433-9e57-0332df024bb7",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
+                    "spriteSheetId": "f955da60-3d6f-44da-af86-3011c72b9366",
+                    "movementType": "randomWalk",
+                    "direction": "down",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "53fd9801-3ae5-4616-846a-c2212a5ddb8d",
+                    "x": 21,
+                    "y": 26,
+                    "script": [
+                        {
+                            "id": "cc6d5db2-ca82-4b30-a047-f9102d8ce2a5",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "I'm worried about\nhow the natives\nwill handle",
+                                    "Nethington opening\nit's doors to the\nworld."
+                                ],
+                                "avatarId": ""
+                            }
+                        },
+                        {
+                            "id": "444a51e2-7978-4235-9aa9-9808f41cbe96",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
+                    "spriteSheetId": "76041492-a61f-48c8-adcc-fee518250d76",
+                    "movementType": "randomWalk",
+                    "direction": "up",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "id": "3b378283-3542-4c50-abc0-662290ddd0c9",
+                    "x": 11,
+                    "y": 13,
+                    "script": [
+                        {
+                            "id": "a50bb3e4-2269-49c6-8384-35b46244f19c",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Nice gear."
+                                ],
+                                "avatarId": ""
+                            }
+                        },
+                        {
+                            "id": "12e1df09-77f0-4988-a08a-6e6b8debddd7",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ],
+            "triggers": [
+                {
+                    "trigger": "walk",
+                    "id": "33af034a-eb45-42ad-a5cf-2335e428db9c",
+                    "x": 16,
+                    "y": 21,
+                    "width": 2,
+                    "height": 1,
+                    "script": [
+                        {
+                            "id": "03e12690-4eaf-4d6e-af73-de394b1cb537",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "4e71d6e9-6eb7-4310-a380-369344d3debf",
+                                "x": 7,
+                                "y": 15,
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "2b3533a5-a8d6-420e-ba7c-c1ca4f421c46",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
+                    "trigger": "walk",
+                    "id": "aaa34901-b348-40ad-af76-14aafb9e6149",
+                    "x": 26,
+                    "y": 13,
+                    "width": 2,
+                    "height": 1,
+                    "script": [
+                        {
+                            "id": "a615f98c-0976-4d9a-8765-64858dfdf424",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "b5b33a87-776e-423a-8c9b-d0cc647c2018",
+                                "x": 9,
+                                "y": 14,
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "693d3e7e-a3eb-4e62-9b02-ff6b0878a587",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
+                    "trigger": "walk",
+                    "id": "b42fef7c-f6e9-47c4-8599-b679675cc164",
+                    "x": 0,
+                    "y": 6,
+                    "width": 1,
+                    "height": 27,
+                    "script": [
+                        {
+                            "id": "4e82c5d1-74d6-4c73-a53c-6cb10a7e6c95",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "81769156-b463-4e97-98f9-9c4af189b40f",
+                                "x": 28,
+                                "y": 19,
+                                "direction": "left",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "2e982850-641c-46bb-8258-4d8ca2be0f84",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
+                    "trigger": "walk",
+                    "id": "3871b794-7e5d-4a70-b1df-98156e366517",
+                    "x": 31,
+                    "y": 6,
+                    "width": 1,
+                    "height": 27,
+                    "script": [
+                        {
+                            "id": "8f79598e-ddc9-46aa-8a91-41e3a4ece13e",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "7be70633-d238-4a7b-aafa-b7e318609abb",
+                                "x": 2,
+                                "y": 24,
+                                "direction": "right",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "6a95a7ad-1914-441c-a62d-b82efb105aec",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Furtropolis East",
+            "backgroundId": "e6fb6ae7-8e13-4ece-a5d7-2a3bb4ba4d9c",
+            "width": 32,
+            "height": 32,
+            "collisions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                255,
+                255,
+                255,
+                255,
+                0,
+                0,
+                0,
+                0,
+                120,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                252,
+                0,
+                0,
+                132,
+                132,
+                224,
+                112,
+                252,
+                132,
+                32,
+                64,
+                0,
+                132,
+                32,
+                70,
+                0,
+                132,
+                0,
+                6,
+                252,
+                252,
+                128,
+                31,
+                132,
+                0,
+                128,
+                31,
+                132,
+                0,
+                0,
+                6,
+                132,
+                0,
+                32,
+                70,
+                132,
+                252,
+                224,
+                112,
+                132,
+                132,
+                0,
+                0,
+                252,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                252,
+                252,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0,
+                132,
+                0,
+                0,
+                0
+            ],
+            "id": "7be70633-d238-4a7b-aafa-b7e318609abb",
+            "x": 1116.6633220255899,
+            "y": 1023.0641310715673,
+            "actors": [],
+            "triggers": [
+                {
+                    "trigger": "walk",
+                    "id": "37e0cf23-40ad-4cf6-96e4-c38ce32f642b",
+                    "x": 0,
+                    "y": 6,
+                    "width": 1,
+                    "height": 27,
+                    "script": [
+                        {
+                            "id": "51414871-17aa-4f5f-9fd1-2eedd9d778ad",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "df39eab3-b71f-4b3f-a733-6b9b20de2ea6",
+                                "x": 28,
+                                "y": 22,
+                                "direction": "left",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "1332c5a9-930f-4955-bcd4-cf96bf63a375",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Furtorpolis West",
+            "backgroundId": "d8184ba5-8727-4c61-9367-c3e90ea491ed",
+            "width": 32,
+            "height": 32,
+            "collisions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                255,
+                255,
+                255,
+                255,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "id": "81769156-b463-4e97-98f9-9c4af189b40f",
+            "x": 574.7568254662276,
+            "y": 1021.5190182281424,
+            "actors": [],
+            "triggers": [
+                {
+                    "trigger": "walk",
+                    "id": "0862547b-8438-4150-964f-8df865585100",
+                    "x": 31,
+                    "y": 6,
+                    "width": 1,
+                    "height": 27,
+                    "script": [
+                        {
+                            "id": "fb371608-4774-4330-a51e-2507ef7dd20d",
+                            "command": "EVENT_SWITCH_SCENE",
+                            "args": {
+                                "sceneId": "df39eab3-b71f-4b3f-a733-6b9b20de2ea6",
+                                "x": 1,
+                                "y": 14,
+                                "direction": "right",
+                                "fadeSpeed": "2"
+                            }
+                        },
+                        {
+                            "id": "73f249da-e5a5-4157-afbe-cea037e89c14",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Scene 9",
+            "backgroundId": "6fad1892-bcb2-4924-bd1c-1e4d03dfeabb",
+            "width": 20,
+            "height": 18,
+            "collisions": [],
+            "id": "8f404cfe-0e18-4e39-ba1b-f3cf4de1d55a",
+            "x": 497.4296994284224,
+            "y": 779.4297370682104,
+            "actors": [],
+            "triggers": []
+        }
+    ],
+    "_version": "1.2.0",
+    "author": "Tony Bark",
+    "name": "Felix (Prototype)",
+    "variables": [
+        {
+            "id": "0",
+            "name": "First Meet"
+        },
+        {
+            "id": "1",
+            "name": "Acceted Offer"
+        },
+        {
+            "id": "2",
+            "name": "Used Radio"
+        },
+        {
+            "id": "3",
+            "name": "Spoke To Space Dog"
+        },
+        {
+            "id": "4",
+            "name": "Quest1"
+        },
+        {
+            "id": "5",
+            "name": "Quest2"
+        },
+        {
+            "id": "6",
+            "name": "Quest3"
+        },
+        {
+            "id": "7",
+            "name": "Quest4"
+        },
+        {
+            "id": "8",
+            "name": "Quest5"
+        },
+        {
+            "id": "9",
+            "name": "Quest6"
+        },
+        {
+            "id": "10",
+            "name": "NewGame"
+        },
+        {
+            "id": "11",
+            "name": "SaveGame"
+        },
+        {
+            "id": "12",
+            "name": "PushedIceBlock"
+        },
+        {
+            "id": "e2392921-a206-4d4c-b9a5-ca8de6edd669__L0",
+            "name": "Local 0"
+        },
+        {
+            "id": "5ad8674c-7af2-497b-a3fd-2dcd034986a0__L0",
+            "name": "First Visit"
+        }
+    ],
+    "backgrounds": [
+        {
+            "id": "6fad1892-bcb2-4924-bd1c-1e4d03dfeabb",
+            "name": "cave",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "cave.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "160906a3-8d94-4811-ae33-3a0dae07c122",
+            "name": "furtropolis",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "furtropolis.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "422fee11-9b1e-4ee0-8626-5e85baa2c58b",
+            "name": "furtropolis_center",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "furtropolis_center.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "e6fb6ae7-8e13-4ece-a5d7-2a3bb4ba4d9c",
+            "name": "furtropolis_east",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "furtropolis_east.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "d8184ba5-8727-4c61-9367-c3e90ea491ed",
+            "name": "furtropolis_west",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "furtropolis_west.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "b340b9a2-2865-4e05-91c0-148846a693c8",
+            "name": "house",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "house.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "19d8e9a1-36f7-4cde-815e-41b33ebff93b",
+            "name": "lab",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "lab.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "f8b1c7ad-7bb2-44b2-8189-175ae8698f11",
+            "name": "logo",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "logo.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "b49ea566-b022-478c-979d-ec3ee255fdc5",
+            "name": "menu",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "menu.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "1b7fa267-d716-40f0-b0d0-f4f966610e07",
+            "name": "outside",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "outside.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "40fda058-df90-4205-a239-fe77bce4fa79",
+            "name": "stars",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "stars.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "f047ff0e-58ad-49fc-bd2b-ec84fc1f7ab3",
+            "name": "titlescreen",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "titlescreen.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "f3102db4-2273-411d-b33f-4d6f65959c60",
+            "name": "underground",
+            "width": 32,
+            "height": 32,
+            "imageWidth": 256,
+            "imageHeight": 256,
+            "filename": "underground.png",
+            "_v": 1621370301908
+        }
+    ],
+    "spriteSheets": [
+        {
+            "id": "1e27bb8e-c805-435a-8b87-05b4f50da4f0",
+            "name": "cat",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "cat.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "f0c3033d-e82a-407d-9fe2-3d5da4f59c09",
+            "name": "checkbox",
+            "numFrames": 3,
+            "type": "actor",
+            "filename": "checkbox.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "17219846-cda9-4e84-bdfa-c3ff105d42cc",
+            "name": "dog",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "dog.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "ede130e6-013a-42d1-a786-1aed3fd3cf32",
+            "name": "duck",
+            "numFrames": 2,
+            "type": "animated",
+            "filename": "duck.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "f2610e3c-8ff9-42fa-a9bb-d1591031fa17",
+            "name": "fire",
+            "numFrames": 4,
+            "type": "animated",
+            "filename": "fire.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "09ad70c6-3ce5-4b97-9e96-466221418a45",
+            "name": "ice",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "ice.png",
+            "_v": 1621370301908
+        },
+        {
+            "id": "dfa75239-299d-41fe-a6cd-9e9438da1938",
+            "name": "npc001",
+            "numFrames": 3,
+            "type": "actor",
+            "filename": "npc001.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "40dcd163-9f72-4861-8131-b01eb9baa000",
+            "name": "npc002",
+            "numFrames": 3,
+            "type": "actor",
+            "filename": "npc002.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "52ad34df-f245-4b2a-b94c-a82af1002871",
+            "name": "npc003",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "npc003.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "ac1e8ef4-ffe6-47cd-b16f-9af5da77ec26",
+            "name": "player",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "player.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "a0442b6a-634f-44da-9962-77938e3ed839",
+            "name": "radio",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "radio.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "3939e8d2-3987-4a22-953e-f1d82134eccf",
+            "name": "rock",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "rock.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "e20ce140-53a5-4b1b-9964-138ba0c86925",
+            "name": "sage",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "sage.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "000a6dde-cb60-436e-b357-30a529daa139",
+            "name": "savepoint",
+            "numFrames": 2,
+            "type": "animated",
+            "filename": "savepoint.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "30b8266a-0533-4f90-bd33-e97dc1d498ea",
+            "name": "signpost",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "signpost.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "e9e61bf7-88fd-491d-ae01-4b7f76909108",
+            "name": "torch",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "torch.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "76041492-a61f-48c8-adcc-fee518250d76",
+            "name": "Villager - Bunny",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Bunny.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "f955da60-3d6f-44da-af86-3011c72b9366",
+            "name": "Villager - Cat",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Cat.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "d5ac7df7-bea3-4985-8090-56c3b5aa4e3f",
+            "name": "Villager - Deer",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Deer.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "91ad0163-0ce2-4df4-b3e5-1d195a9b375c",
+            "name": "Villager - Elephant",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Elephant.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "fd27c7c9-14ae-4ca0-bf4e-4239ed505808",
+            "name": "Villager - Fox",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Fox.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "61bcec26-a836-440a-bd3b-f8dd66b53128",
+            "name": "Villager - Frog",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Frog.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "0e45f3ed-a6d7-4beb-9fd2-cda014c8cc72",
+            "name": "Villager - Girl Dog",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Girl Dog.png",
+            "_v": 1621370301910
+        },
+        {
+            "id": "5c8c7af7-2cd1-4291-bc9d-2b3546c49d0a",
+            "name": "Villager - Ram",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Ram.png",
+            "_v": 1621370301909
+        },
+        {
+            "id": "c4359370-6f78-416c-819c-c250be0ba940",
+            "name": "Villager - Squirrel",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Villager - Squirrel.png",
+            "_v": 1621370301913
+        }
+    ],
+    "music": [
+        {
+            "id": "f50428ab-a084-4591-9bba-2ba10fe7b1c6",
+            "name": "template",
+            "filename": "template.mod",
+            "_v": 1621370301901
+        }
+    ],
+    "customEvents": []
+}
